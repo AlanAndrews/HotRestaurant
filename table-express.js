@@ -11,6 +11,7 @@ app.use(express.static(__dirname + '/'));
 // =============================================================
 var app = express();
 var PORT = process.env.PORT || 3000;
+// var PORT=
 
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -34,20 +35,19 @@ app.get("/tables", function(req, res) {
 app.get("/reserve", function(req, res) {
     res.sendFile(path.join(__dirname, "reserve.html"));
 });
-
 app.get("/404", function(req, res) {
-    // res.send("Welcome to the Star Wars Page!")
     res.sendFile(path.join(__dirname, "404.html"));
 });
-
+app.get("/api/clear", function(req, res) {
+    tables=[];
+    return res.json(tables);
+});
 app.post("/api/tables", function(req, res) {
 var newres = req.body;
 console.log(newcharacter);
 tables.push(newres);
-
 res.json(newres);
 });
-
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
 });

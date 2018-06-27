@@ -73,11 +73,11 @@
         $("#inputEmail").val("");
         $("#inputId").val("");
         console.log(customer)
-        // $.post("/api/characters", newCharacter)
-        //   .then(function(data) {
-        //     console.log("add.html", data);
+        $.post("/api/tables", newCharacter)
+         .then(function(data) {
+        console.log(data);
         //     alert("Adding character...");
-        // });
+        });
       });
     </script>
   </body>

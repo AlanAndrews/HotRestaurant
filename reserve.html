@@ -73,7 +73,7 @@
         $("#inputEmail").val("");
         $("#inputId").val("");
         console.log(customer)
-        $.post("/api/tables", newCharacter)
+        $.post("/api/tables", customer)
          .then(function(data) {
         console.log(data);
         //     alert("Adding character...");
